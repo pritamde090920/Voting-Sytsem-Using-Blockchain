@@ -1,0 +1,78 @@
+
+        div {
+            margin: 0px auto;
+            width: 35%;
+            padding: 30px;
+            font-size: 20px;
+            background-color: #006699;
+        }
+		
+        #slct1,#slct2,#slct3{
+			display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+			height: 40px;
+			width: 200px;
+			margin: 8px 0;
+			padding: 0 15px;
+			
+		}
+		
+		
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type=number],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type=password],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #08a8a0;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type=submit]:hover {
+            background-color: green;
+        }
+
+        h1 {
+            color: #006699;
+            text-align: center;
+        }
+
+        div label {
+            color: white;
+        }
+        

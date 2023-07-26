@@ -1,0 +1,50 @@
+body{
+    margin:1%;
+    height:100%;
+    width:95%;
+    border:5px;
+}
+.navArea{
+    margin-bottom:0px;
+    height:100px;
+    width:100%;
+    background-color:black;
+    
+}
+    
+.bodySection{
+    height:600px;
+    width:1460px;
+    padding:0px;
+    margin-top:-34px;
+    background-image:url("../images/Home.jpg");
+    background-repeat: none;
+    background-position:center;
+    background-size:cover;
+} 
+#navbar{
+    text-align:left;
+    list-style:none;
+}
+#logInRegister{
+    text-align: right;
+    list-style:none;
+}
+.pageLink{
+    text-decoration: none;
+    margin:2px;
+    padding:10px;
+    color:white;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p{
+    text-align: center;
+    padding:10px;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(233, 238, 211);
+}
+a:hover{
+    color:rgb(130, 130, 207);
+}
