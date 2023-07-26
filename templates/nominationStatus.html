@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+  </head>
+  <body>
+	{% if nom==1 and validated==1 %}
+		<h1>Nomination Accepted and Candidate Registered Into The Constituency. Check results after voting process is completed.</h1>
+	{% elif nom==1 and validated==0%}
+		<h1>Nomination Is Pending Validation.</h1>
+	{% elif nom==0 and validated==0%}
+		<h1>Nomination Is Rejected. Fill Another Correct Nomination.</h1>
+	{% endif %}
+	<button type="button" id="btn1" onclick="window.location.href='{{url_for('candidatedashboard')}}'">Back to dashboard</button>
+  </body>
+</html>

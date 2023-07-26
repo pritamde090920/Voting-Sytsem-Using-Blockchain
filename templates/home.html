@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/homeStyle.css')}}" type="text/css">
+</head>
+<body>
+        <div class="navArea">
+            <nav>
+                <li>
+                    <ul id="navbar">
+                        <a href="#" class="pageLink">Home</a>
+                        <a href="#" class="pageLink">About</a>
+                    </ul>
+                    <ul id="logInRegister">
+                        <a href="{{url_for('voterRegister')}}" class="pageLink">Voter Registration</a>
+                        <a href="{{url_for('voterlogin')}}" class="pageLink">Voter Login</a>
+						<a href="{{url_for('candidateRegister')}}" class="pageLink">Candidate Registration</a>
+						<a href="{{url_for('candidatelogin')}}" class="pageLink">Candidate Login</a>
+                        <a href="{{url_for('adminlogin')}}" class="pageLink">Admin Login</a>
+                    </ul>
+                </li>
+            </nav>
+        </div>
+        <div class="bodySection">
+            <p >
+                Welcome to E-Voting System
+            </p>
+  
+        </div>
+</body>
+</html>

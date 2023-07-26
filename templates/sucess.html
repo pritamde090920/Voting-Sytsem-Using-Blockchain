@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <style>
+       body{
+    margin:1%;
+    height:100%;
+    width:95%;
+    border:5px;
+   
+}
+.container{
+   height:600px;
+   width:1460px;
+   background-image:url("../static/images/sucess.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 400px 400px;
+} 
+#btn1{
+    margin-top:5%;
+    margin-left: 5%;
+    padding:25px;
+    padding-bottom:30px;
+    width:300px;
+    height:80px;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(0, 0, 0);
+    color:rgb(225, 230, 234);
+    border-radius: 20px;
+ }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+	  <button type="button" id="btn1" onclick="window.location.href='{{url_for('home')}}'">Back to  Home Page</button>
+      </div>
+  </body>
+</html>

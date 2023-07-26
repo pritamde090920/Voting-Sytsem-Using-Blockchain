@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/validateVoterStyle.css')}}" type="text/css">
+  </head>
+  <body>
+  <button type="button" id="btn1" onclick="window.location.href='{{url_for('admindashboard')}}'">Back to dashboard</button>
+    <div class="container">
+    <h1>Candidate List for Validation:</h1>
+	<p> {{ record }} </p>
+	<table>
+        <tr>
+            <th>Name</th>
+            <th>Party</th>
+			<th>State</th>
+			<th>Parliament Constituency</th>
+			<th>Assembly Constituency</th>
+			<th>Type Of Election</th>
+			<th>Status</th>
+			<th>UCID</th>
+			<th>Nominated</th>
+			<th>Validated</th>
+        </tr>
+        {% for row in details %}
+        <tr>
+           {% for cell in row %}
+           <td>{{cell}}</td>
+           {% endfor %}
+		   
+			{% if row[8]=='YES' and row[9]=='NO' %}
+			<td><button type="button1" onclick="window.location.href='{{url_for('validateCandidate',number='YES')}}'">Validate</button></td>
+			<td><button type="button2" onclick="window.location.href='{{url_for('validateCandidate',number='NO')}}'">Reject</button></td>
+			{% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+  </body>
+</div>
+</html>

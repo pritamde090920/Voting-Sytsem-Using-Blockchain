@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/loginStyle.css')}}" type="text/css">
+</head>
+
+<body>
+    <h1>Voter Login</h1>
+    <div>
+        <form action="{{url_for('voterlogin')}}" method="POST">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required><br />
+
+            <label for="enum">EPIC/Voter ID</label>
+            <input type="text" id="enum" name="epicnumber" placeholder="Enter EPIC/Voter ID" required><br />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required><br />
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>

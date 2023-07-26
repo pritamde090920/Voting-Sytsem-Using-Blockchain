@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/loginStyle.css')}}" type="text/css">
+</head>
+
+<body>
+    <h1>Admin Login</h1>
+    <div>
+        <form action="{{url_for('adminlogin')}}" method="POST">
+
+            <label for="aname">Admin Name</label>
+            <input type="text" id="aname" name="adminname" placeholder="Enter Full Name"><br />
+
+            <label for="aid">Admin ID</label>
+            <input type="text" id="aid" name="adminid" placeholder="Enter admin ID"><br />
+
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password"><br />
+
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>All Candidates</title>
+    <!--<link rel="stylesheet" href="voteCastStyle.css">-->
+    <style>
+      body{
+    margin:1%;
+    height:100%;
+    width:95%;
+    border:5px;
+    }
+  .container{
+   height:600px;
+   width:1460px;
+   margin-left:5%;
+   background-image:url("../static/images/allCandidate.jpg");
+   background-repeat: no-repeat;
+   background-position: right;
+   background-size: 600px 300px;
+}
+th{
+    border: 2px solid blueviolet;
+    background-color: aqua;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+ }
+ td{
+    border: 1px solid blueviolet;
+    background-color: rgb(46, 134, 202);
+    color: black; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+ }
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display:inline;
+    color: rgb(37, 15, 144);
+    margin-bottom: 20px;
+}
+    button{
+    margin-top:32%;
+    padding:25px;
+    padding-bottom:30px;
+    width:250px;
+    height:60px;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(0, 0, 0);
+    color:rgb(225, 230, 234);
+    border-radius: 20px;
+    }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+      <div class="w3-cell-row">
+        <div class="w3-container w3-cell w3-mobile">
+            <p><i class="fa fa-address-card fa-5x"></i>
+            <br><h1>ALL CANDIDATES</h1></p>
+			
+		<div>
+         <table>
+			<tr>
+                <th>Candidate Name</th>
+                <th>Candidate Party</th>
+              </tr>
+			  {% for row in can_name %}
+				<tr>
+				   {% for cell in row %}
+				   <td>{{cell}}</td>
+
+				   {% endfor %}
+
+				</tr>
+				{% endfor %}
+		 </table>
+              
+      </div>
+			
+        </div>
+        <button type="button" id="btn"  onclick="window.location.href='{{url_for('admindashboard')}}'">Go to Dashboard</button>
+      </div>
+  </body>
+</html>

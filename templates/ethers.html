@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ethers</title>
+	<style>
+			th{
+				border: 2px solid blueviolet;
+				background-color: aqua;
+				color: black;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-size: 30px;
+			 }
+			 td{
+				border: 1px solid blueviolet;
+				background-color: rgb(46, 134, 202);
+				color: black; 
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 25px;
+			 }
+	</style>
+	</head>
+  <body>
+	<table>
+        <tr>
+            <th>Ethereum Address</th>
+        </tr>
+        {% for row in accounts %}
+        <tr>
+           <td>{{row[0]}}</td>
+		   <td>{{row[1]}}</td>
+           {% endfor %}
+		</tr>
+    </table>
+  </body>
+</html>

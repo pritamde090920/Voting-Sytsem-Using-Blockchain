@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+  </head>
+  <body>
+	<div class="w3-cell-row" align="center">
+        <div class="w3-container w3-cell w3-mobile">
+          <div class="w3-card">
+            <p><a href="/addCandidate"><i class="fa fa-address-card fa-5x"></i>
+            <br>Add Candidate</a></p>
+          </div>
+  </body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <!--<link rel="stylesheet" href="../static/css/dashboardStyle.css">-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Welcome Back,{{name}}!</h2>
+      <button type="button" id="btn1" onclick="window.location.href='{{url_for('addCandidate')}}'">Validate Candidate</button>
+      <button type="button" id="btn3" onclick="window.location.href='{{url_for('validateVoterPage')}}'">Validate Voter</button>
+      <button type="button" id="btn2" onclick="window.location.href='{{url_for('viewResultOptionsAdm')}}'">View Result</button>
+      <button type="button" id="btn3" onclick="window.location.href='{{url_for('votingTime')}}'">Voting Time</button>
+      <button type="button" id="btn4" onclick="window.location.href='{{url_for('logOut')}}'">Logout</button>
+  </div>
+  </body>
+</html>
+
+
+  

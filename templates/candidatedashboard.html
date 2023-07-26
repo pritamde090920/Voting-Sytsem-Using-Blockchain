@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+  </head>
+  <body>
+	<div class="container">
+        <h2>Welcome Back,{{name}}!</h2>
+        <button type="button" id="btn1" onclick="window.location.href='{{url_for('addNomination')}}'">File Nomination</button>
+        <button type="button" id="btn3" onclick="window.location.href='{{url_for('viewResultCan')}}'">View Result</button>
+		<button type="button" id="btn2" onclick="window.location.href='{{url_for('nominationStatus')}}'">Nomination Status</button>
+        <button type="button" id="btn5" onclick="window.location.href='{{url_for('logOut')}}'">Logout</button>
+    </div>
+  </body>
+</html>
+
+
+  

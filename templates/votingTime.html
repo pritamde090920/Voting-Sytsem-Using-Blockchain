@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voting System</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <button type="button" id="btn1" onclick="window.location.href='{{url_for('startVote')}}'">Start Voting</button>
+    <button type="button" id="btn2" onclick="window.location.href='{{url_for('endVote')}}'">End Voting</button>
+  </div>
+</body>
+</html>

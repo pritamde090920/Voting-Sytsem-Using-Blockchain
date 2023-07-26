@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voting System</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <h1>{{msg}}</h1>
+	<button type="button" id="btn1" onclick="window.location.href='{{url_for('admindashboard')}}'">Back to dashboard</button>
+  </div>
+</body>
+</html>

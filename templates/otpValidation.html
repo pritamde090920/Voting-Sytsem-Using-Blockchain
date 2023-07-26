@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+    <style>
+    input[type=submit] {
+    margin-left:3%;
+    margin-top:10%;
+    width:150px;
+    height:50px;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(0, 0, 0);
+    color:rgb(225, 230, 234);
+    border-radius: 5%;
+    }
+    input[type=text]{
+    margin-left:3%;
+    width:200px;
+    height:30px; 
+    }
+    label{
+    margin-left:3%;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(8, 155, 188);
+    }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+	<div>
+		<h2>Otp for authentication is sent to your email. Check spam if not received.</h2>
+    </div>
+	<div>
+	<form method="POST" action="{{ url_for('otp') }}" >
+		<label for="Otp"> {{ otpverificationform.otp.label }} <br><br>
+            <input type="text" name="otp" class="textField">  </label><br><br>
+            <input type="submit" id="submitbtn" value="Enter"><br>
+	</form>
+      </div>
+  </div>
+  </body>
+</html>

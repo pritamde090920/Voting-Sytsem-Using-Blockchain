@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <!--<link rel="stylesheet" href="voteCastStyle.css">-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/voteCastStyle.css')}}" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+    <div>
+        <h2>Please fill the appropriate information to cast your vote</h2>
+        <button type="button" id="logoutbtn" onclick="window.location.href='{{url_for('logOut')}}'">Logout</button>
+    </div>
+    <div>
+        <form method="POST" action="{{ url_for('voteAdded',voterID=details[1]) }}" >
+            <table>
+              <tr>
+                <td class="heading"> Name :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[0] }}</td>
+              </tr>
+			  <tr>
+                <td class="heading"> Voter ID :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[1] }}</td>
+              </tr>
+			  <tr>
+                <td class="heading"> State :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[2] }}</td>
+              </tr>
+			  <tr>
+                <td class="heading"> Parliament Constituency :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[3] }}</td>
+              </tr>
+			  <tr>
+                <td class="heading"> Assembly Constituency :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[4] }}</td>
+              </tr>
+			  <tr>
+                <td class="heading"> Type of election :</td>
+                <td style="margin-bottom:20px;
+                width:350px;
+                height:30px;">{{ details[5] }}</td>
+              </tr>
+			  {% for i in range(35) %}
+			  <tr></tr>
+			  {% endfor %}
+			  
+			</table> 
+      <label for="voteCastTo" class="heading">Choose your preferred Candidate<br><br>
+			  <table>
+				<tr>
+					<th></th>
+					<th></th>
+					<th class="header">Candidate UCID</th>
+					<th class="header">Candidate Name</th>
+					<th class="header">Candidate Party</th>
+				</tr>
+				{% for row in can_det %}
+				
+				<tr>
+          <td><input type="radio" name="options" id="{{row[0]}}"value="{{row[0]}}" class="radiobtn"></input></td>
+					<td>{% for cell in row %}
+						   <td class="row">{{cell}}</td>
+						   <!--<td><button type="button">Validate</button></td>-->
+						   {% endfor %}
+					</td>
+				   
+				</tr>
+				{% endfor %}
+			</table>
+			<input type="submit" value="Cast Vote" id="submitbtn">
+		</form>	
+</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboardStyle.css')}}" type="text/css">
+  </head>
+  <body>
+	<div class="container">
+        <h2>Welcome Back,{{name}}!</h2>
+        <button type="button" id="btn1" onclick="window.location.href='{{url_for('otpValidation')}}'">Cast Vote</button>
+        <button type="button" id="btn2" onclick="window.location.href='{{url_for('viewResultVot')}}'">View Result</button>
+        <button type="button" id="logoutbtn" onclick="window.location.href='{{url_for('logOut')}}'">Logout</button>
+    </div>
+  </body>
+</html>

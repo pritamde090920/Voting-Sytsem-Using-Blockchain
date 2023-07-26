@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/viewresultStyle.css')}}" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Result of Election: </h2>
+        <table class="center">
+            <tr>
+                <th>Candidate Name</th>
+				<th>Candidate Party</th>
+                <th>Vote Count</th>
+            </tr>
+			{% for row in can_name %}
+            <tr>
+                <td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+        <td>{{result[row[1]]}}</td>
+        {% endfor %}
+            </tr>
+			
+        </table>
+        <button type="button" id="btn1" onclick="window.location.href='{{url_for('home')}}'">Back to Home Page</button>
+    </div>
+  </body>
+</html>

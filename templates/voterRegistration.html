@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="UTF-8">
+<title>Voting System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/loginStyle.css')}}" type="text/css">
+<script>
+	function populate1(s1,s2)
+	{
+		var s1=document.getElementById(s1);
+		var s2=document.getElementById(s2);
+		
+		s2.innerHTML="";
+		var optionArray=['-- Choose parliament constituency --'];
+		var valuesData = {{ values|tojson }};
+		for (let option=0;option<valuesData.length;option++)
+		{
+			let ind=valuesData[option];
+			if(ind[0]==s1.value && !optionArray.includes(ind[2])){
+				optionArray.push(ind[2]);
+			}
+			
+		}
+		for(var option in optionArray)
+		{
+			var newOption=document.createElement("option");
+			newOption.value=optionArray[option];
+			newOption.innerHTML=optionArray[option];
+			s2.options.add(newOption);
+		}
+	}
+	
+	function populate2(s1,s2,s3,toe)
+	{
+		var s1=document.getElementById(s1);
+		var s2=document.getElementById(s2);
+		var s3=document.getElementById(s3);
+		var toe=document.getElementById(toe);
+		
+		s3.innerHTML="";
+		if(toe.value=="pe")
+		{
+			var optionArray=['Not Required'];
+		}
+		else
+		{
+			var optionArray=['-- Choose assembly constituency --'];
+			var valuesData = {{ values|tojson }};
+			for (let option=0;option<valuesData.length;option++)
+			{
+				let ind=valuesData[option];
+				if(ind[0]==s1.value && ind[2]==s2.value && !optionArray.includes(ind[5])){
+					optionArray.push(ind[5]);
+				}
+				
+			}
+		}
+		for(var option in optionArray)
+		{
+			var newOption=document.createElement("option");
+			newOption.value=optionArray[option];
+			newOption.innerHTML=optionArray[option];
+			s3.options.add(newOption);
+		}
+	}
+</script>
+</head>
+<body>
+<h1>New Voter Registration</h1>
+<div>
+<form action="{{url_for('voterRegistration')}}" method="POST">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Enter Name"><br/>
+
+<label for="enum">EPIC/Voter ID</label>
+<input type="text" id="epicnumber" name="epicnumber" placeholder="Enter EPIC/Voter ID"><br/>
+
+<label for="enum">Email</label>
+<input type="text" id="email" name="email" placeholder="Enter Email Address"><br/>
+
+<label for="toe">Type of election</label>
+<select name="toe" id="toe">
+	<option value=""> -- Choose type of election -- </option>
+    <option value="pe"> Parliament Election </option>
+	<option value="ae"> Assembly Election </option>
+</select>
+
+<div class="container">
+	<div class="f-group"
+		<label for="">State</label>
+		<select name="slct1" id="slct1" onchange="populate1(this.id,'slct2')">
+			<option value=""> -- Choose state -- </option>
+			{% for data in states %} 
+				<option value="{{data}}">{{data}}</option>
+			{% endfor %}
+		</select>
+	</div>
+	
+	<div class="f-group"
+		<label for="">Parliament Constituency</label>
+		<select name="slct2" id="slct2" onchange="populate2('slct1',this.id,'slct3','toe')">
+		</select>
+	</div>
+	
+	<div class="f-group"
+		<label for="">Assembly Constituency</label>
+		<select name="slct3" id="slct3">
+		</select>
+	</div>
+</div>
+
+<label for="password">Create Password</label>
+<input type="password" id="password" name="password" placeholder="Enter password"><br/>
+
+
+<input type="submit" value="Register">
+</form>
+</div>
+</body>
+</html>
